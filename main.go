@@ -8,13 +8,40 @@ import (
 // Average возвращает среднее арифметическое элементов слайса []int.
 // Напишите код функции
 // ...
-func average([]int) int {
+func Average(list []int) float64 {
+	if len(list) == 0 {
+		return 0
+	}
+	sum := 0
+	count := 0
+	for _, ch := range list {
+		sum += ch
+		count++
+	}
 
+	return float64(sum) / float64(count)
 }
 
 // Range возвращает размах числовой последовательности.
 // Напишите код функции
 // ...
+
+func Range(list []int) int {
+	if len(list) == 0 {
+		return 0
+	}
+	max := list[0]
+	min := max
+	for _, ch := range list {
+		if ch > max {
+			max = ch
+		}
+		if ch < min {
+			min = ch
+		}
+	}
+	return max - min
+}
 
 func main() {
 	lists := [][]int{
